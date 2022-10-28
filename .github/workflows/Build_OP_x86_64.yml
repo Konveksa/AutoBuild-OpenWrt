@@ -93,7 +93,8 @@ jobs:
     - name: Import external feeds - OpenClash
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/vernesong/OpenClash.git /tmp/OpenClash
+        git clone --depth 1 --filter=blob:none --sparse https://github.com/vernesong/OpenClash.git /tmp/OpenClash
+        cd /tmp/OpenClash/ && git sparse-checkout set luci-app-openclash/ && cd ~/openwrt
         mv /tmp/OpenClash/luci-app-openclash package/luci-app-openclash
 
     - name: Configuration Customization - Build_x86_64
