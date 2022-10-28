@@ -84,6 +84,12 @@ jobs:
       working-directory: ./openwrt
       run: |
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
+        
+    - name: Import external feeds - OpenClash
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/vernesong/OpenClash.git /tmp/OpenClash
+        mv /tmp/OpenClash/luci-app-openclash package/luci-app-openclash
 
     - name: Configuration Customization - Build_x86_64
       env:
