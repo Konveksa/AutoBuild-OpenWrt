@@ -85,6 +85,11 @@ jobs:
       run: |
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
         
+    - name: Import external feeds - DDNS-GO
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+        
     - name: Import external feeds - OpenClash
       working-directory: ./openwrt
       run: |
