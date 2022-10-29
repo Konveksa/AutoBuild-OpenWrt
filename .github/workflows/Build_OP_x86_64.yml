@@ -78,10 +78,11 @@ jobs:
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
 
-    - name: Import external feeds - JerryKuKu Argon
+    - name: Import external feeds - Argon
       working-directory: ./openwrt
       run: |
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+        find ./ -name luci-theme-argon | xargs rm -rf;
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
         sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
         
     - name: Import external feeds - DDNS-GO
