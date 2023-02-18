@@ -30,6 +30,9 @@ jobs:
           /usr/share/dotnet \
           /etc/mysql \
           /etc/php
+          /opt/ghc
+          "/usr/local/share/boost"
+          "$AGENT_TOOLSDIRECTORY"
         sudo -E apt-get -y purge \
           azure-cli \
           ghc* \
